@@ -44,8 +44,35 @@ const aiDeatiels = id =>{
 }
 const aiDisplayDeatiels = data =>{
     console.log(data)
-document.getElementById('modal-header').innerText = `${data.description}`;
-
+    const aiDeatiels =  document.getElementById('aiDeatiels');
+    const section = document.createElement('section');
+    aiDeatiels.innerText= '';
+    section.innerHTML =`
+    <div class=" ">
+      <h4 class="fw-bold ">${data.description}</h4>
+    <div class="mt-3 d-flex ">
+    <div class="me-3 border border-1 bg-light p-2 rounded text-center d-flex flex-column justify-content-center align-items-center">
+     <h5>${data.pricing[0].plan}</h5>
+     <h5>${data.pricing[0].price}</h5>
+    </div>
+    <div  class="me-3 border border-1 bg-light  p-2 rounded text-center d-flex flex-column justify-content-center align-items-center">
+    <h5>${data.pricing[1].plan}</h5>
+    <h5>${data.pricing[1].price}</h5>
+   </div>
+   <div  class="me-3 border border-1 bg-light p-2 rounded text-center d-flex flex-column justify-content-center align-items-center">
+    <h5>${data.pricing[2].plan}</h5>
+    <h5>${data.pricing[2].price}</h5>
+   </div>
+    </div>
+    <div>
+    <div>
+    <h4>Features</h4>
+    <P>. ${data.features[0]}</P>
+    </div>
+    </div>
+    </div>
+    `;
+    aiDeatiels.appendChild(section);
 
 
 
